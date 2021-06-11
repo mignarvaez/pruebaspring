@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.5.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'eclipse' // optional (to generate Eclipse project files)
 }
 
 group = 'com.ejemplo'
@@ -15,8 +16,19 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	
+
+  	// Dependencies to your used dbms
+  	implementation 'org.postgresql:postgresql:42.2.1'
+  	implementation 'com.h2database:h2:1.4.200'
+  	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+  	
+
 }
+
 
 test {
 	useJUnitPlatform()
